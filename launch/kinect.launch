@@ -4,8 +4,8 @@
   </include>
   <node
     pkg="pfa_r2a"
-    type="object_detection"
-    name="object_detection"
+    type="edge_detection.py"
+    name="edge_detection"
     output="screen"
   />
 </launch>

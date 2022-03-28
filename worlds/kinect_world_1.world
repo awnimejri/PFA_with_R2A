@@ -1,8 +1,5 @@
 <sdf version='1.7'>
   <world name='default'>
-    <scene>
-      <background>1 1 1 1</background>
-    </scene>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -28,7 +25,7 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>10000 10000</size>
+              <size>100 100</size>
             </plane>
           </geometry>
           <surface>
@@ -57,10 +54,6 @@
             </plane>
           </geometry>
           <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-            <specular>0 0 0 0</specular>
-            <emissive>1 1 1 1</emissive>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Grey</name>
@@ -189,7 +182,7 @@
         <collision name='collision'>
           <geometry>
             <box>
-              <size>1 1 1</size>
+              <size>0.999999 0.999999 1</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -209,14 +202,14 @@
         <visual name='visual'>
           <geometry>
             <box>
-              <size>1 1 1</size>
+              <size>0.999999 0.999999 1</size>
             </box>
           </geometry>
           <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-            <specular>0 0 0 0</specular>
-            <emissive>0 1 0 1</emissive>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 1 0 1</emissive>
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -225,10 +218,10 @@
       </link>
     </model>
     <state world_name='default'>
-      <sim_time>1510 163000000</sim_time>
-      <real_time>654 814219257</real_time>
-      <wall_time>1648297337 20878317</wall_time>
-      <iterations>641229</iterations>
+      <sim_time>729 624000000</sim_time>
+      <real_time>739 202056366</real_time>
+      <wall_time>1647720617 652968648</wall_time>
+      <iterations>729624</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -250,33 +243,13 @@
         </link>
       </model>
       <model name='unit_box'>
-        <pose>3.51589 1.40907 0.095144 0 -0 0</pose>
+        <pose>2 -0 0.095144 0 -0 0</pose>
         <scale>0.216991 0.342283 0.190288</scale>
         <link name='link'>
-          <pose>3.51589 1.40907 0.095144 0 -0 0</pose>
+          <pose>2 -0 0.095144 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 -0 -0 -0 -0</acceleration>
-          <wrench>-0 0 -0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='unit_cylinder'>
-        <pose>1.76879 2.61123 0.11882 0 -0 1e-06</pose>
-        <scale>0.226662 0.226662 0.237641</scale>
-        <link name='link'>
-          <pose>1.76879 2.61123 0.11882 0 -0 1e-06</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
-          <wrench>0 0 -9.8 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='unit_sphere'>
-        <pose>1.46208 -0.523376 0.099415 0 -0 0</pose>
-        <scale>0.198831 0.198831 0.198831</scale>
-        <link name='link'>
-          <pose>1.46208 -0.523376 0.099415 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>5e-06 2e-06 1.2e-05 -4.1e-05 7.7e-05 7e-05</acceleration>
+          <wrench>5e-06 2e-06 1.2e-05 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -285,126 +258,11 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>1.91659 -5.01258 1.1419 -0 0.179642 1.71221</pose>
+        <pose>-1.28146 -5.42616 2.5282 -0 0.195642 1.46021</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='unit_cylinder'>
-      <pose>2.44251 1.3018 0.5 0 -0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.145833</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.145833</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.500001</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.500001</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-            <specular>0 0 0 0</specular>
-            <emissive>0 0 1 1</emissive>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='unit_sphere'>
-      <pose>2.90312 -2.11375 0.5 0 -0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.1</iyy>
-            <iyz>0</iyz>
-            <izz>0.1</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <sphere>
-              <radius>0.5</radius>
-            </sphere>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <sphere>
-              <radius>0.5</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-            <specular>0 0 0 0</specular>
-            <emissive>1 0 0 1</emissive>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
   </world>
 </sdf>
+
